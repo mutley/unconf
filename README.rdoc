@@ -1,3 +1,43 @@
 == Welcome to Unconf
 
-tl;dr
+Feature list: brutally small.
+
+Now (MVP):
+
+* Login with Youtube account.
+* See a list of your local (uploaded) videos.
+* Get a list of your Youtube videos for login (use API).
+  - http://stackoverflow.com/questions/6369086/how-to-get-users-own-videos-list-after-i-passed-the-access-token-of-youtube-wit
+* Choose a Youtube video to import in Unconf.
+* Edit details of videos you import.
+* No comments for videos. If you want to comment, use Youtube proper.
+* Note about how to enable uploading videos longer than 15 minutes.
+* Home page:
+  - Branding.
+  - Newest videos.
+  - List of conferences.
+* Admin tools:
+  - Add conferences:
+    * Name.
+    * Shortname (url name).
+    * Year.
+    * Web site.
+    * Video Length restriction.
+  - Administrate videos.
+* Video page URL structure (Sharable):
+  - http://unconf.org/conf/mwrc/2013/id-slug-slug-slug
+
+Later:
+
+* Ability to vote (one way only, up, no down?) on other videos.
+* Question/Answers for videos (like Q&A at a real conference).
+* Videos must be approved before being accepted.
+* Videos must include Unconf branding, just like any other conference.
+* Home Page:
+  - Most recent conferences.
+  - Highest rated videos.
+* Subdomaining:
+  - Use multi level subdomains:
+    * http://mwrc.2013.unconf.org/
+    * http://2013.unconf.org/ (All confs for this year)
+    * http://mwrc.unconf.org/ (All years for this conf)
