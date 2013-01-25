@@ -5,12 +5,26 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development, :test do
-  gem 'sqlite3'
-end
-
 gem 'omniauth', '1.1.1'
 gem 'omniauth-youtube', '2.1'
+gem 'bootstrap-sass', '2.2.2.0'
+gem 'backbone-on-rails', '0.9.10.0'
+
+group :development, :test do
+  gem 'ZenTest', '4.8.3' # avoid bug in 4.8.4 gemspec
+  gem 'sqlite3', '1.3.7'
+  gem 'rspec-rails', '2.12.2'
+  gem "autotest", '4.4.6'
+  gem "autotest-rails", '4.1.2'
+end
+
+group :test do
+  gem 'database_cleaner', '0.9.1'
+  gem 'simplecov', :require => false
+  # gem 'capybara-webkit'
+  gem 'launchy', '2.1.2'
+  gem 'spork-rails', '3.2.1'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -43,4 +57,4 @@ end
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
