@@ -18,6 +18,11 @@ class SessionsController < ApplicationController
   end
   alias_method :index, :show
 
+  def destroy
+    session["user_id"] = nil
+    respond_with(:success)
+  end
+
   def failure
     redirect_to login_path, alert: "Authentication failed, please try again."
   end

@@ -8,5 +8,6 @@ class Unconf.Routers.App extends Backbone.Router
     $('#wrapper').html(view.render().el)
 
   login: ->
-    view = new Unconf.Views.UnconfLogin()
+    view = new Unconf.Views.UnconfsIndex()
+    # view = new Unconf.Views.UnconfLogin()
     $('#wrapper').html(view.render().el)

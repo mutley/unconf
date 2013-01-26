@@ -12,5 +12,14 @@ window.Unconf =
     Unconf.router = new Unconf.Routers.App
     Backbone.history.start pushState: true
 
+    @session = new Unconf.Models.Session()
+    @session.fetch()
+
+  sendToLogin: ->
+    @router.navigate '/login' , trigger: true
+
+  loggedIn: ->
+    Unconf.session.valid()
+
 $(document).ready ->
   Unconf.initialize()
