@@ -10,7 +10,6 @@ gem 'omniauth', '1.1.1'
 gem 'omniauth-youtube', '2.1'
 gem 'bootstrap-sass', '2.2.2.0'
 gem 'backbone-on-rails', '0.9.10.0'
-gem 'certified'
 
 group :development, :test do
   gem 'ZenTest', '4.8.3' # avoid bug in 4.8.4 gemspec
@@ -18,6 +17,7 @@ group :development, :test do
   gem 'rspec-rails', '2.12.2'
   gem "autotest", '4.4.6'
   gem "autotest-rails", '4.1.2'
+  gem 'certified'
 end
 
 group :test do
