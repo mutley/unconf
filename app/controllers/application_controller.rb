@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
+  respond_to :html, :json
   protect_from_forgery
 
   helper_method :current_user, :logged_in?, :page_title
+
+  def sign_in_path
+    '/login'
+  end
 
 protected
 
@@ -14,7 +19,12 @@ protected
   end
 
   def login_required
-    redirect_to sign_in_path unless logged_in?
+    unless logged_in?
+      respond_to do |format|
+        format.html { redirect_to sign_in_path }
+        format.json { respond_with(nil, :status => :unauthorized) }
+      end
+    end
   end
 
 end
