@@ -1,4 +1,8 @@
 Unconf::Application.routes.draw do
+  match '/auth/:provider/callback', to: 'sessions#create' #omniauth
+
+  resources :sessions, :actions => [:create, :show, :index]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

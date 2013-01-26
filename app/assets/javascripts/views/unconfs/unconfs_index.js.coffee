@@ -1,7 +1,5 @@
 class Unconf.Views.UnconfsIndex extends Backbone.View
-
-  tagName: 'div'
-  className: 'home something'
+  el: '.application'
 
   template: JST['unconfs/index']
 

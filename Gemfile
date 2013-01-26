@@ -10,6 +10,7 @@ gem 'omniauth', '1.1.1'
 gem 'omniauth-youtube', '2.1'
 gem 'bootstrap-sass', '2.2.2.0'
 gem 'backbone-on-rails', '0.9.10.0'
+gem 'certified'
 
 group :development, :test do
   gem 'ZenTest', '4.8.3' # avoid bug in 4.8.4 gemspec
