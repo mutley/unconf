@@ -3,8 +3,8 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string "provider", :null => false
       t.string "uid", :null => false
-      t.string "info"
-      t.string "credentials"
+      t.text "info"
+      t.text "credentials"
       t.string "extra"
       t.timestamps
     end
