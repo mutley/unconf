@@ -20,6 +20,11 @@ class SessionsController < ApplicationController
   end
   alias_method :index, :show
 
+  def failure
+    redirect_to login_path, alert: "Authentication failed, please try again."
+  end
+
+
   protected
 
   def auth_hash
