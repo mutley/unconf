@@ -12,14 +12,18 @@ window.Unconf =
     Unconf.router = new Unconf.Routers.App
     Backbone.history.start pushState: true
 
-    @session = new Unconf.Models.Session()
-    @session.fetch()
-
-  sendToLogin: ->
-    @router.navigate '/login' , trigger: true
+    Unconf.session = new Unconf.Models.Session()
+    @buildInitialPage()
+    Unconf.session.fetch()
 
   loggedIn: ->
-    Unconf.session.valid()
+    Unconf.session?.valid()
+
+  buildInitialPage: ->
+    Unconf.userButton = new Unconf.Views.UserButton()
+    Unconf.userButton.render()
+    Unconf.userButton.listenTo(Unconf.session, 'change', Unconf.userButton.render)
+
 
 $(document).ready ->
   Unconf.initialize()
