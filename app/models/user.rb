@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :provider, :uid, :info, :credentials, :extra
   serialize :info, OmniAuth::AuthHash::InfoHash
   serialize :credentials, Hashie::Mash
+  serialize :extra, Hashie::Mash
 
   def as_json(options = {})
     json = super({ :methods => %w[created_at id provider] }.merge(options))
