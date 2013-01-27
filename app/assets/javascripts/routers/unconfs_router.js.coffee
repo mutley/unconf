@@ -1,13 +1,15 @@
 class Unconf.Routers.App extends Backbone.Router
   routes:
     '': 'index',
-    'login': 'login',
+    'your-presentations': 'yourPresentations',
+    'add-presentation': 'addPresentation',
 
   index: ->
-    view = new Unconf.Views.UnconfsIndex()
-    $('#wrapper').html(view.render().el)
+    new Unconf.Views.UnconfsIndex().render()
 
-  login: ->
-    view = new Unconf.Views.UnconfsIndex()
-    # view = new Unconf.Views.UnconfLogin()
-    $('#wrapper').html(view.render().el)
+  yourPresentations: ->
+    new Unconf.Views.UnconfsYourPresentations().render()
+
+  addPresentation: ->
+    new Unconf.Views.UnconfsAddPresentation().render()
+

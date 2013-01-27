@@ -5,6 +5,9 @@ class Unconf.Models.Session extends Backbone.Model
   valid: ->
     !!@id
 
+  userName: ->
+    @attributes.info.channel_title
+
   logOut: ->
     console.log('logOut called')
     if @id?
