@@ -10,4 +10,11 @@ class User < ActiveRecord::Base
     user
   end
 
+  def youtube_videos
+    feed = Feedzirra::Feed.fetch_and_parse(
+      "http://gdata.youtube.com/feeds/api/users/default/uploads?oauth_token=#{credentials.token}"
+    )
+    feed.entries
+  end
+
 end

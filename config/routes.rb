@@ -3,6 +3,11 @@ Unconf::Application.routes.draw do
   match '/auth/failure', :to => 'sessions#failure'
 
   resources :sessions, :actions => [:create, :show, :index, :destroy]
+  resources :videos, :actions => [:create, :update, :show, :index, :destroy] do
+    collection do
+      get 'youtube'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
