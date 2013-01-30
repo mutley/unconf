@@ -1,1 +1,10 @@
 add presentation
+{{foo}}
+{{#if youtube_videos}}
+  x
+  {{#each youtube_videos}}
+    <p>Title: {{attributes.title}}</p>
+  {{/each}}
+{{else}}
+  y
+{{/if}}

@@ -4,5 +4,8 @@ class Unconf.Views.UnconfsAddPresentation extends Backbone.View
   template: JST['unconfs/add_presentation']
 
   render: ->
-    $(@el).html(@template)
+    videos = new Unconf.Collections.YoutubeVideos()
+    videos.fetch().complete =>
+      console.log videos.models
+      $(@el).html(@template(youtube_videos: videos.models))
     this
